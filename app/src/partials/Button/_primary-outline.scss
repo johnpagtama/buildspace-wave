@@ -1,0 +1,19 @@
+@import './default', '../utils/functions/map-merge',
+	'../utils/pseudo_class/pseudo-class';
+
+@mixin button-primary-outline($in: ()) {
+	$props: map-collect($default, $primary-outline, $in);
+
+	@at-root #{'.'}#{'button-primary-outline'} {
+		@each $prop-name, $prop-val in $props {
+			#{$prop-name}: #{$prop-val};
+		}
+
+		@include pseudo-class(
+			hover,
+			(map-collect($default-hover, $primary-outline-hover))
+		);
+
+		@content;
+	}
+}

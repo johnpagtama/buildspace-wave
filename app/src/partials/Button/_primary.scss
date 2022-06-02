@@ -1,0 +1,19 @@
+@import './default', '../utils/functions/map-merge',
+	'../utils/pseudo_class/pseudo-class';
+
+@mixin button-primary($in: ()) {
+	$props: map-collect($default, $primary, $in);
+
+	@at-root #{'.'}#{'button-primary'} {
+		@each $prop-name, $prop-val in $props {
+			#{$prop-name}: #{$prop-val};
+		}
+
+		@include pseudo-class(
+			hover,
+			(map-collect($default-hover, $primary-hover))
+		);
+
+		@content;
+	}
+}
