@@ -1,6 +1,7 @@
 import * as React from 'react';
 // import { ethers } from 'ethers';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
+import Header from './components/Header';
 import Button from './components/Button';
 import Login from './pages/Login';
 import Main from './pages/Main';
@@ -11,21 +12,26 @@ export default function App() {
 
 	return (
 		<>
-			<Router>
-				<nav>
-					<Link to='/'>Main</Link>
-					<Link to='/login'>Login</Link>
-				</nav>
-				<Routes>
-					<Route path='/' element={<Main />} />
-					<Route
-						path='/login'
-						element={<Login />}
+			<nav>
+				<Link to='/'>
+					<Button
+						variant='button-primary'
+						text='Main'
 					/>
-				</Routes>
-			</Router>
+				</Link>
+				<Link to='/login'>
+					<Button
+						variant='button-primary-outline'
+						text='Login'
+					/>
+				</Link>
+			</nav>
+			<Routes>
+				<Route path='/' element={<Main />} />
+				<Route path='/login' element={<Login />} />
+			</Routes>
 
-			<Button variant='button-primary' text='Sign up' />
+			<Header />
 		</>
 	);
 }

@@ -1,0 +1,16 @@
+.header {
+	display: grid;
+	grid-template-columns: repeat(1rem, 3);
+	grid-template-areas: 'header__logo      .      header__button';
+	background-color: aqua;
+
+	&__logo {
+		grid-area: header__logo;
+	}
+
+	&__button {
+		grid-area: header__button;
+		justify-self: right;
+		margin: 5px 1rem;
+	}
+}
