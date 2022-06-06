@@ -1,13 +1,12 @@
 import * as React from 'react';
 // import { ethers } from 'ethers';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Routing from './routes/Routing';
 import Header from './components/Header';
 import Button from './components/Button';
-import Login from './pages/Login';
-import Main from './pages/Main';
 import './App.scss';
 
-export default function App() {
+const App = () => {
 	const wave = () => {};
 
 	return (
@@ -26,12 +25,11 @@ export default function App() {
 					/>
 				</Link>
 			</nav>
-			<Routes>
-				<Route path='/' element={<Main />} />
-				<Route path='/login' element={<Login />} />
-			</Routes>
+			<Routing />
 
 			<Header />
 		</>
 	);
-}
+};
+
+export default App;
