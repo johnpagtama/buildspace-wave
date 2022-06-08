@@ -1,18 +1,24 @@
 import React from 'react';
-import styles from './index.module.scss';
-import Button from '../Button';
+import { Link } from 'react-router-dom';
+import { headerItems } from '../routes/Nav/config';
 
 const Header = () => {
 	return (
-		<header className={`${styles['header']}`}>
-			<div className={`${styles['header__logo']}`}>Logo</div>
-			<div className={`${styles['header__button']}`}>
-				<Button
-					variant='button-primary'
-					text='Sign In'
-				/>
-			</div>
-		</header>
+		<>
+			{headerItems.map((h) => (
+				<header key={h.id} className={h.parent}>
+					{h.children.map((c) => (
+						<div
+							key={c.id}
+							className={c.class}>
+							<Link to={c.link}>
+								{c.item}
+							</Link>
+						</div>
+					))}
+				</header>
+			))}
+		</>
 	);
 };
 

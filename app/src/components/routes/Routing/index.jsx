@@ -1,13 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { routes } from '../../routes/config';
+import { routes } from './config';
 
 const Routing = () => {
 	return (
 		<Routes>
 			{routes.map((r) => (
 				<Route
-					key={r}
+					key={r.id}
 					path={r.path}
 					element={r.element}
 				/>
