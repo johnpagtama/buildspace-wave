@@ -1,13 +1,13 @@
 import React from 'react';
 import { v4 } from 'uuid';
-import Main from '../../../../pages/Main';
+import Signup from '../../../../pages/Signup';
 import Signin from '../../../../pages/Signin';
 
 export const routes = [
 	{
 		id: v4(),
 		path: '/',
-		element: <Main />,
+		element: <Signup />,
 	},
 	{
 		id: v4(),
