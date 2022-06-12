@@ -2,14 +2,12 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	grid-template-areas: 'header__logo      .      header__button';
-	background-color: aqua;
 
 	&__logo {
 		grid-area: header__logo;
 		align-self: center;
 		margin: 5px 1rem;
 		font-size: 2rem;
-		text-decoration: none;
 
 		& > :link {
 			text-decoration: none;
