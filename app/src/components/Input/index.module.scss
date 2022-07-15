@@ -1,21 +1,9 @@
 .input {
-	grid-area: input;
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-template-areas: 'input__bar		input__button';
-
-	&__bar {
-		grid-area: input__bar;
-		box-sizing: border-box;
-		height: 2.2rem;
-		width: 100%;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: 1rem;
-		border: 3px solid #fff;
-		border-radius: 5px;
-	}
-
-	&__button {
-		grid-area: input__button;
-	}
+	box-sizing: border-box;
+	height: 2.225rem;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	border: 3px solid #fff;
+	border-radius: 5px;
 }
