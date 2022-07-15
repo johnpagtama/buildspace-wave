@@ -1,9 +1,19 @@
 import React from 'react';
 import styles from './index.module.scss';
 
-const Button = ({ variant = 'button', text = 'Button', style }) => {
+const Button = ({
+	onClick = () => console.log('Click'),
+	variant = 'button',
+	text = 'Button',
+	style,
+	type = 'button',
+}) => {
 	return (
-		<button style={style} className={`${styles[variant]}`}>
+		<button
+			onClick={onClick}
+			type={type}
+			style={style}
+			className={`${styles[variant]}`}>
 			{text}
 		</button>
 	);
